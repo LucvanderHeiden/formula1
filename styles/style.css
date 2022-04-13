@@ -1,0 +1,921 @@
+/* CSS Document */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --f1red: #e10600;
+}
+
+/* GEIMPORTEERDE FONTS OM TE GEBRUIKEN */
+
+@font-face {
+  font-family: Formula1-Regular;
+  src: url(https://www.formula1.com/etc/designs/fom-website/fonts/F1Regular/Formula1-Regular.ttf);
+}
+
+@font-face {
+  font-family: Formula1-Black;
+  src: url(https://www.formula1.com/etc/designs/fom-website/fonts/F1Black/Formula1-Black.ttf);
+}
+
+@font-face {
+  font-family: Formula1-Wide;
+  src: url(https://www.formula1.com/etc/designs/fom-website/fonts/F1Wide/Formula1-Wide.ttf);
+}
+
+@font-face {
+  font-family: Formula1-Bold;
+  src: url(https://www.formula1.com/etc/designs/fom-website/fonts/F1Bold/Formula1-Bold.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap');
+
+header {
+  background-color: var(--f1red);
+  color: white;
+
+  position: fixed;
+  z-index: 1;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
+  overflow: auto;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-family: Formula1-Bold;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+h2 {
+  font-family: Formula1-Wide;
+  font-weight: bold;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+h3 {
+  color: var(--f1red);
+  font-size: .8em;
+  margin: .125em;
+  margin-bottom: .4em;
+  margin-top: .75em;
+
+}
+
+div {
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+/* CODE VOOR DE HEADER EN NAV */
+
+header a:first-of-type {
+  order: 1;
+  z-index: 5;
+  justify-self: center;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+header a:first-of-type img {
+  max-width: 4em;
+  z-index: 1;
+}
+
+button {
+  position: fixed;
+  border: none;
+  padding: 0;
+  margin: .25em;
+  width: 2em;
+  background-color: var(--f1red);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+header>button:last-of-type {
+  right: 0em;
+  margin-right: 2em;
+}
+
+button>img {
+  background-color: transparent;
+  border: none;
+  width: 3em;
+}
+
+
+header button:last-of-type {
+  order: 2;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+nav>ul {
+  margin-top: 0em;
+  align-items: center;
+  padding: 2em;
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  bottom: 0em;
+  transform: translateY(calc(-100%));
+
+  background-color: var(--f1red);
+
+  transition: 0.5s;
+}
+
+header li {
+  border: solid 0.1em;
+  border-left: hidden;
+  border-top: hidden;
+  border-color: white;
+  border-bottom-right-radius: 1em;
+
+  padding: 1.15em;
+  margin-bottom: 1.25em;
+
+  transition: 0.25s;
+}
+
+header li:hover {
+  background-color: #15151e;
+  cursor: pointer;
+}
+
+nav.showMenu ul {
+  transform: translateY(calc(0%));
+}
+
+nav button {
+  order: -1;
+  justify-self: center;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+/* CODE VOOR DE EERSTE SECTION, HET NIEUWSOVERZICHT */
+
+body>section:first-of-type {
+  position: relative;
+  max-width: 100%;
+  margin-top: 4em;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.2em;
+}
+
+article {
+  margin: .5em;
+  overflow: hidden;
+}
+
+article:first-of-type {
+  border: solid;
+  border-left: hidden;
+  border-bottom: hidden;
+  border-width: .65em;
+  border-color: var(--f1red);
+  border-top-right-radius: 1.5em;
+  grid-column: span 2;
+
+  margin-bottom: 2em;
+  padding-right: .75em;
+}
+
+article img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+article:hover img {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+article:hover p {
+  border-color: var(--f1red);
+  cursor: pointer;
+}
+
+article:hover h1 {
+  text-decoration: underline;
+}
+
+article>p {
+  padding: .25em;
+  margin-top: .25em;
+
+  border: solid;
+  border-left: hidden;
+  border-top: hidden;
+  border-bottom-right-radius: .65em;
+  border-width: .1em;
+}
+
+
+
+
+
+
+
+
+
+
+/* CODE VOOR DE TWEEDE SECTION, DE SCHEDULE */
+
+section:nth-of-type(2) {
+  background-color: #15151e;
+  color: grey;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0;
+  margin-top: 5em;
+  padding: 0em;
+  padding-top: 1em;
+
+  overflow: scroll;
+}
+
+section:nth-of-type(2) ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 0em;
+  padding-left: 0em;
+
+  transition: .5s;
+}
+
+section:nth-of-type(2) li {
+  margin: 0em;
+  padding: 2em;
+  padding-top: 9em;
+  padding-bottom: 12em;
+  text-align: center;
+
+  width: 12em;
+
+  border-right: solid .01em;
+  border-bottom: solid .01em;
+  border-bottom-right-radius: 2em;
+  border-color: grey;
+
+  transition: .2s;
+  cursor: pointer;
+}
+
+section:nth-of-type(2) li:hover {
+  color: white;
+
+}
+
+li img {
+  max-width: 5em;
+  border-radius: .5em;
+}
+
+.russia {
+  transform: translateX(-40em);
+}
+
+
+
+
+
+
+
+/* CODE VOOR DE DERDE SECTION, DE STANDINGS */
+
+section:nth-of-type(3) img {
+  width: 100%;
+  min-width: 100em;
+  margin-top: 0em;
+}
+
+section:nth-of-type(3) {
+  background-color: lightgray;
+
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+section:nth-of-type(3)>div>h2 {
+  margin: 0em;
+  font-size: 2em;
+  text-align: center;
+  transform: translateY(3.5em);
+  color: white;
+}
+
+div:first-of-type ul:first-of-type {
+  display: flex;
+  justify-content: center;
+  margin: 0em;
+  padding: 0em;
+}
+
+div:first-of-type ul:first-of-type li {
+  margin: 0em;
+  padding: 1em;
+  border: none;
+  border-bottom: solid .5em transparent;
+  transform: translateY(2em);
+
+  cursor: pointer;
+}
+
+div:first-of-type ul:first-of-type li:hover {
+  border-color: var(--f1red);
+}
+
+section:nth-of-type(3)>ul:last-of-type {
+  padding: 0em;
+}
+
+section:nth-of-type(3)>ul:last-of-type li {
+  font-family: Formula1-Regular;
+  font-size: .7em;
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 1fr;
+  grid-gap: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: .25em;
+  padding: .5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+
+  border-radius: 1em;
+
+  transition: .3s;
+}
+
+section:nth-of-type(3)>ul:last-of-type li:hover {
+  background-color: #15151e;
+  color: white;
+
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* CODE VOOR DE VERSCHILLENDE BORDER COLORS VAN DE VERSCHILLENDE TEAMS BIJ DE STANDINGS */
+
+/* Mercedes */
+section:nth-of-type(3)>ul:last-of-type li:first-of-type h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(3) h2 {
+  border-right: solid .35em #00d2be;
+}
+
+/* Red Bull Racing */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(2) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(5) h2 {
+  border-right: solid .35em #0600ef;
+}
+
+/* McLaren */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(4) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(8) h2 {
+  border-right: solid .35em #FF9800;
+}
+
+/* Ferrari */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(6) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(7) h2 {
+  border-right: solid .35em #dc0000;
+}
+
+/* Alpha Tauri */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(9) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(14) h2 {
+  border-right: solid .35em #2b4562;
+}
+
+/* Alpine */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(10) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(11) h2 {
+  border-right: solid .35em #0090ff;
+}
+
+/* Aston Martin */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(12) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(13) h2 {
+  border-right: solid .35em #006f62;
+}
+
+/* Williams */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(15) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(16) h2 {
+  border-right: solid .35em #005aff;
+}
+
+/* Alfa Romeo */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(17) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(18) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(20) h2 {
+  border-right: solid .35em #900000;
+}
+
+/* Haas */
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(19) h2,
+section:nth-of-type(3)>ul:last-of-type li:nth-of-type(21) h2 {
+  border-right: solid .35em lightgrey;
+}
+
+
+b {
+  font-family: Formula1-Bold;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+/* CODE VOOR DE FOOTER */
+
+footer {
+  color: white;
+  background-color: #15151e;
+
+  padding: 2em;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+footer>section {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  margin: 1em;
+  padding: 1em;
+
+  border-right: solid .65em #38383f;
+  border-bottom: solid .65em #38383f;
+  border-bottom-right-radius: 1.5em;
+}
+
+footer li {
+  margin: .25em;
+  border-bottom: solid .25em transparent;
+
+  cursor: pointer;
+}
+
+footer li:hover {
+  border-bottom-color: var(--f1red);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CODE VOOR DE TWEEDE HTML PAGINA, OVER DE DRIVERS */
+
+body.driversPage {
+  margin: 0em;
+  margin-top: 6em;
+}
+
+body.driversPage h1 {
+  font-family: Formula1-Black;
+  font-size: 3em;
+
+  padding-top: .5em;
+  padding-right: 2em;
+
+  border-top: solid .2em;
+  border-right: solid .2em;
+  border-top-right-radius: .65em;
+}
+
+body.driversPage p {
+  max-width: 40em;
+}
+
+body.driversPage>section {
+  display: block;
+  margin: .25em;
+}
+
+body.driversPage>section>ul {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  margin: 0em;
+  padding: 0em;
+}
+
+body.driversPage>section>ul>li {
+  margin: .75em;
+  margin-top: 1.25em;
+  padding: 1em;
+
+  border-top: solid .1em;
+  border-right: solid .1em;
+  border-top-right-radius: .65em;
+
+  transition: .2s;
+  cursor: pointer;
+}
+
+body.driversPage>section>ul>li:nth-of-type(18),
+body.driversPage>section>ul>li:nth-of-type(19) {
+  font-size: .95em;
+}
+
+body.driversPage>section>ul>li>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  border-bottom: solid .01em;
+}
+
+body.driversPage>section>ul>li>div:first-of-type>p {
+  font-family: Formula1-Wide;
+}
+
+
+body.driversPage>section>ul>li>div:nth-of-type(2)>img {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border: solid .1em;
+}
+
+body.driversPage>section>ul>li>p {
+  margin-bottom: 0em;
+}
+
+body.driversPage>section>ul>li>div:nth-of-type(3) {
+  border: none;
+  display: flex;
+  justify-content: left;
+
+  background-image: linear-gradient(white, grey);
+}
+
+body.driversPage>section>ul>li>div:nth-of-type(3)>img:first-of-type {
+  width: 6em;
+  height: 3em;
+  margin-top: 10em;
+  margin-right: 1em;
+
+  background-color: white;
+
+  border-radius: 0em;
+  border-top-right-radius: 1em;
+}
+
+body.driversPage>section>ul>li>div:nth-of-type(3)>img:last-of-type {
+  max-width: 14em;
+  text-align: center;
+}
+
+body.driversPage>section>ul>li>div:nth-of-type(2)>p {
+  font-size: 1.2em;
+
+  border-left: solid .3em #00d2be;
+  padding: 0em;
+  padding-left: .5em;
+}
+
+
+
+
+
+
+
+
+/* CODE VOOR DE VERSCHILLENDE BORDER COLORS VOOR DE BIJBEHORDENDE TEAMS */
+
+/* Red Bull Racing */
+body.driversPage>section>ul>li:nth-of-type(2)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(5)>div:nth-of-type(2)>p {
+  border-color: #0600ef;
+}
+
+/* McLaren */
+body.driversPage>section>ul>li:nth-of-type(4)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(8)>div:nth-of-type(2)>p {
+  border-color: #FF9800;
+}
+
+/* Ferrari */
+body.driversPage>section>ul>li:nth-of-type(6)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(7)>div:nth-of-type(2)>p {
+  border-color: #dc0000;
+}
+
+/* Alpha Tauri */
+body.driversPage>section>ul>li:nth-of-type(9)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(14)>div:nth-of-type(2)>p {
+  border-color: #2b4562;
+}
+
+/* Alpine */
+body.driversPage>section>ul>li:nth-of-type(10)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(11)>div:nth-of-type(2)>p {
+  border-color: #0090ff;
+}
+
+/* Aston Martin */
+body.driversPage>section>ul>li:nth-of-type(12)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(13)>div:nth-of-type(2)>p {
+  border-color: #006f62;
+}
+
+/* Williams */
+body.driversPage>section>ul>li:nth-of-type(15)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(16)>div:nth-of-type(2)>p {
+  border-color: #005aff;
+}
+
+/* Alfa Romeo */
+body.driversPage>section>ul>li:nth-of-type(17)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(18)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(20)>div:nth-of-type(2)>p {
+  border-color: #900000;
+}
+
+/* Haas */
+body.driversPage>section>ul>li:nth-of-type(19)>div:nth-of-type(2)>p,
+body.driversPage>section>ul>li:nth-of-type(21)>div:nth-of-type(2)>p {
+  border-color: lightgrey;
+}
+
+
+
+
+
+
+
+/* CODE VOOR HET VERANDEREN NAAR DE VERSCHILLENDE BORDER COLORS VAN VERSCHILLENDE TEAMS BIJ HET 'DRIVERS' OVERZICHT */
+
+/* Mercedes */
+body.driversPage>section>ul>li:first-of-type:hover,
+body.driversPage>section>ul>li:nth-of-type(3):hover {
+  border-color: #00d2be;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Red Bull Racing */
+body.driversPage>section>ul>li:nth-of-type(2):hover,
+body.driversPage>section>ul>li:nth-of-type(5):hover {
+  border-color: #0600ef;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* McLaren */
+body.driversPage>section>ul>li:nth-of-type(4):hover,
+body.driversPage>section>ul>li:nth-of-type(8):hover {
+  border-color: #FF9800;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Ferrari */
+body.driversPage>section>ul>li:nth-of-type(6):hover,
+body.driversPage>section>ul>li:nth-of-type(7):hover {
+  border-color: #dc0000;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Alpha Tauri */
+body.driversPage>section>ul>li:nth-of-type(9):hover,
+body.driversPage>section>ul>li:nth-of-type(14):hover {
+  border-color: #2b4562;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Alpine */
+body.driversPage>section>ul>li:nth-of-type(10):hover,
+body.driversPage>section>ul>li:nth-of-type(11):hover {
+  border-color: #0090ff;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Aston Martin */
+body.driversPage>section>ul>li:nth-of-type(12):hover,
+body.driversPage>section>ul>li:nth-of-type(13):hover {
+  border-color: #006f62;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Williams */
+body.driversPage>section>ul>li:nth-of-type(15):hover,
+body.driversPage>section>ul>li:nth-of-type(16):hover {
+  border-color: #005aff;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Alfa Romeo */
+body.driversPage>section>ul>li:nth-of-type(17):hover,
+body.driversPage>section>ul>li:nth-of-type(18):hover,
+body.driversPage>section>ul>li:nth-of-type(20):hover {
+  border-color: #900000;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+/* Haas */
+body.driversPage>section>ul>li:nth-of-type(19):hover,
+body.driversPage>section>ul>li:nth-of-type(21):hover {
+  border-color: lightgrey;
+
+  padding-top: 2em;
+  margin-top: .25em;
+}
+
+
+
+
+
+
+
+
+
+/* CODE VOOR WANNEER HET SCHERM GROTER DAN 56EM WORDT */
+
+@media (min-width: 56em) {
+  nav {
+    display: flex;
+    justify-content: center;
+    order: 1;
+  }
+
+  nav button {
+    display: none;
+  }
+
+  nav ul {
+    transform: translateX(calc(0%));
+    display: flex;
+    justify-content: space-evenly;
+    top: 0em;
+    left: 5em;
+    right: 5em;
+    bottom: 50em;
+
+    margin: 0em;
+    padding-bottom: 0;
+    padding-top: 1.5em;
+
+  }
+
+  header a:first-of-type {
+    order: 0;
+  }
+
+  header ul:first-of-type li {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: hidden;
+    border-bottom-right-radius: 0em;
+  }
+
+  body.homePage>section:first-of-type {
+    grid-template-columns: 2fr 1fr 1fr;
+    margin: 4em;
+  }
+
+  article:first-of-type {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  section:nth-of-type(3)>ul:last-of-type {
+    margin-left: 8em;
+    margin-right: 8em;
+  }
+
+  section:nth-of-type(3)>ul:last-of-type li {
+    grid-template-columns: 1fr 2fr 6fr 1fr;
+    font-size: 1em;
+  }
+
+  body.driversPage>section>ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer>section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body.driversPage h1 {
+    padding-right: 6em;
+    margin: 1em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* CODE VOOR WANNEER HET SCHERM GROTER DAN 70EM WORDT */
+
+@media (min-width: 70em) {
+  body.driversPage>section>ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  footer>section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* CODE VOOR WANNEER HET SCHERM GROTER DAN 92EM WORDT */
+
+@media (min-width: 92em) {
+  body.driversPage>section>ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  footer>section {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
